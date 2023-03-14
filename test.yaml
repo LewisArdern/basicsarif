@@ -1,0 +1,17 @@
+rules:
+  - id: taint-example
+    languages:
+      - typescript
+    message: Found dangerous eval usage
+    metadata:
+      interfile: true
+    mode: taint
+    pattern-sources:
+      - patterns:
+          - pattern: |
+              ($REQ: Request).body
+    pattern-sinks:
+      - pattern: eval(...)
+    pattern-sanitizers:
+      - pattern: safe_eval(...)
+    severity: WARNING
