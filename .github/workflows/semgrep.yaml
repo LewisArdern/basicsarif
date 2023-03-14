@@ -1,0 +1,29 @@
+on:
+  pull_request: {}
+  push:
+    branches:
+    - main
+    - master
+    paths:
+    - .github/workflows/semgrep.yml
+  schedule:
+  # random HH:MM to avoid a load spike on GitHub Actions at 00:00
+  - cron: 2 14 * * *
+name: Semgrep
+jobs:
+  semgrep:
+    name: Scan
+    runs-on: ubuntu-20.04
+    env:
+      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      SEMGREP_APP_URL: https://staging.semgrep.dev
+    container:
+      image: returntocorp/semgrep
+    steps:
+    - uses: actions/checkout@v3
+    - run: semgrep --config s/returntocorp:hallo --dataflow-traces --sarif > /tmp/sarif.json
+    - run: cat /tmp/sarif.json
+    - uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: /tmp/sarif.json
+        category: Semgrep
