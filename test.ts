@@ -10,14 +10,6 @@ exports.example2 = (req: Request) => {
   return isNotVulnerable(req.body.foo)
 }
 
-
-exports.example2 = (req: Request) => {
-  // found with semgrep OSS
-  const value = req.body.foo
-  return eval(value)
-}
-
-
 function isVulnerable(source) {
     // found with Semgrep Pro Engine
     return eval(source)
@@ -30,3 +22,10 @@ function isNotVulnerable(source) {
 }
 
 
+
+function foTestingPurposes(req: Request) {
+  // found with Semgrep Pro Engine
+  const a = req.body.foo
+  const b = {"a":a}
+  return eval(b)
+}
