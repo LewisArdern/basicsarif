@@ -302,37 +302,9 @@
               "defaultConfiguration": {
                 "level": "error"
               },
+              "fullDescription": "<ul><li>[Semgrep Rule](https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat)</li><li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval</li><li>https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback</li><li>https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/</li><li>https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html</li></ul>",
               "help": {
-                "text": "a",
-                "markdown": "<ul> <li>First item</li> <li>Second item</li> <li>Third item</li> <li>Fourth item</li> </ul>"
-              },
-              "fullDescription": {
-                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
-              },
-              "id": "code-string-concat-copy",
-              "name": "code-string-concat-copy",
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-                  "HIGH CONFIDENCE",
-                  "OWASP-A03:2021 - Injection",
-                  "security"
-                ]
-              },
-              "shortDescription": {
-                "text": "Semgrep Finding - code-string-concat-copy"
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "help": {
-                "text": "a",
-                "markdown": "<ul> <li>First item</li> <li>Second item</li> <li>Third item</li> <li>Fourth item</li> </ul>"
-              },
-              "fullDescription": {
+                "markdown": "<ul><li>[Semgrep Rule](https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat)</li><li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval</li><li>https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback</li><li>https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/</li><li>https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html</li></ul>",
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
               "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
@@ -350,6 +322,30 @@
               "shortDescription": {
                 "text": "Semgrep Finding - javascript.lang.security.audit.code-string-concat.code-string-concat"
               }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": "<ul><li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval</li><li>https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback</li><li>https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/</li><li>https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html</li></ul>",
+              "help": {
+                "markdown": "<ul><li>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval</li><li>https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback</li><li>https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/</li><li>https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html</li></ul>",
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "id": "code-string-concat-copy",
+              "name": "code-string-concat-copy",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "MEDIUM CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding - code-string-concat-copy"
+              }
             }
           ],
           "semanticVersion": "1.19.0"
@@ -359,4 +355,3 @@
   ],
   "version": "2.1.0"
 }
-                
