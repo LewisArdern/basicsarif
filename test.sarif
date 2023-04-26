@@ -40,8 +40,7 @@
                             "startLine": 27
                           }
                         }
-                      },
-                      "nestingLevel": 0
+                      }
                     },
                     {
                       "location": {
@@ -65,8 +64,7 @@
                             "startLine": 27
                           }
                         }
-                      },
-                      "nestingLevel": 0
+                      }
                     },
                     {
                       "location": {
@@ -90,8 +88,7 @@
                             "startLine": 28
                           }
                         }
-                      },
-                      "nestingLevel": 0
+                      }
                     },
                     {
                       "location": {
@@ -115,8 +112,7 @@
                             "startLine": 29
                           }
                         }
-                      },
-                      "nestingLevel": 1
+                      }
                     }
                   ]
                 }
@@ -182,8 +178,7 @@
                             "startLine": 34
                           }
                         }
-                      },
-                      "nestingLevel": 0
+                      }
                     },
                     {
                       "location": {
@@ -207,8 +202,7 @@
                             "startLine": 34
                           }
                         }
-                      },
-                      "nestingLevel": 0
+                      }
                     },
                     {
                       "location": {
@@ -232,8 +226,7 @@
                             "startLine": 35
                           }
                         }
-                      },
-                      "nestingLevel": 0
+                      }
                     },
                     {
                       "location": {
@@ -257,8 +250,7 @@
                             "startLine": 36
                           }
                         }
-                      },
-                      "nestingLevel": 1
+                      }
                     }
                   ]
                 }
@@ -305,23 +297,18 @@
               "fullDescription": {
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
-              "help": {
-                "markdown": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.\n\nReferences:\n - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)\n - [https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback](https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback)\n - [https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/](https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/)\n - [https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html](https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html)",
-                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
-              },
               "id": "code-string-concat-copy",
               "name": "code-string-concat-copy",
               "properties": {
                 "precision": "very-high",
                 "tags": [
                   "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-                  "MEDIUM CONFIDENCE",
                   "OWASP-A03:2021 - Injection",
                   "security"
                 ]
               },
               "shortDescription": {
-                "text": "Semgrep Finding - code-string-concat-copy"
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               }
             },
             {
@@ -331,10 +318,6 @@
               "fullDescription": {
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
-              "help": {
-                "markdown": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.\n\nReferences:\n - [Semgrep Rule](https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat)\n - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)\n - [https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback](https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback)\n - [https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/](https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/)\n - [https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html](https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html)",
-                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
-              },
               "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
               "id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
               "name": "javascript.lang.security.audit.code-string-concat.code-string-concat",
@@ -342,17 +325,16 @@
                 "precision": "very-high",
                 "tags": [
                   "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-                  "HIGH CONFIDENCE",
                   "OWASP-A03:2021 - Injection",
                   "security"
                 ]
               },
               "shortDescription": {
-                "text": "Semgrep Finding - javascript.lang.security.audit.code-string-concat.code-string-concat"
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               }
             }
           ],
-          "semanticVersion": "1.19.0"
+          "semanticVersion": "1.17.1"
         }
       }
     }
