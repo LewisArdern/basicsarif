@@ -41,7 +41,7 @@
                           }
                         }
                       },
-                      "nestingLevel": 1
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -124,7 +124,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "b27a61606e07855d776d57e0d5d007d69d6ca9f32eb5af6f871c836dba56a9fd29b290fca332a3efd67b169b5e53e313d9c3312236dc6b543685fd6d54baf019_0"
+            "matchBasedId/v1": "44c63b4efed9f2faed8e704527752f6eb774507df3c002bd8692031caf2fe51f99500d9a3e54bf10ec01b67dcbb7f9c4426a9f56545e0c9632a409b8a72c8c47_0"
           },
           "locations": [
             {
@@ -146,10 +146,10 @@
             }
           ],
           "message": {
-            "text": "Found dangerous eval usage"
+            "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
           },
           "properties": {},
-          "ruleId": "example-for-chinmay"
+          "ruleId": "code-string-concat-copy"
         },
         {
           "codeFlows": [
@@ -266,7 +266,7 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "b27a61606e07855d776d57e0d5d007d69d6ca9f32eb5af6f871c836dba56a9fd29b290fca332a3efd67b169b5e53e313d9c3312236dc6b543685fd6d54baf019_1"
+            "matchBasedId/v1": "44c63b4efed9f2faed8e704527752f6eb774507df3c002bd8692031caf2fe51f99500d9a3e54bf10ec01b67dcbb7f9c4426a9f56545e0c9632a409b8a72c8c47_1"
           },
           "locations": [
             {
@@ -288,10 +288,10 @@
             }
           ],
           "message": {
-            "text": "Found dangerous eval usage"
+            "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
           },
           "properties": {},
-          "ruleId": "example-for-chinmay"
+          "ruleId": "code-string-concat-copy"
         }
       ],
       "tool": {
@@ -300,19 +300,45 @@
           "rules": [
             {
               "defaultConfiguration": {
-                "level": "warning"
+                "level": "error"
               },
               "fullDescription": {
-                "text": "Found dangerous eval usage"
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
-              "id": "example-for-chinmay",
-              "name": "example-for-chinmay",
+              "id": "code-string-concat-copy",
+              "name": "code-string-concat-copy",
               "properties": {
                 "precision": "very-high",
-                "tags": []
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
               },
               "shortDescription": {
-                "text": "Found dangerous eval usage"
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "name": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               }
             }
           ],

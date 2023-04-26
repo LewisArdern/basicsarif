@@ -36,4 +36,3 @@ function isNotVulnerable2(req: Request) {
   return eval(f)
 }
 
-
