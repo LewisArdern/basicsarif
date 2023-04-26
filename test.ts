@@ -29,3 +29,11 @@ function isNotVulnerable1(req: Request) {
     return eval(f)
 }
 
+function isNotVulnerable2(req: Request) {
+  // safe because of req
+  const protect = req.body.foo
+  const f = {"p":protect}
+  return eval(f)
+}
+
+
