@@ -1,88 +1,119 @@
 {
-  "version": "2.1.0",
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
   "runs": [
     {
-      "tool": {
-        "driver": {
-          "name": "PythonScanner"
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": []
         }
-      },
+      ],
       "results": [
         {
-          "ruleId": "PY2335",
-          "message": {
-            "text": "Use of tainted variable 'raw_input' in the insecure function 'eval'."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "bad-eval-with-code-flow.py"
-                },
-                "region": {
-                  "startLine": 8
-                }
-              }
-            }
-          ],
           "codeFlows": [
             {
               "message": {
-                "text": "Tracing the path from user input to insecure usage."
+                "text": "Untrusted dataflow from test.ts:27 to test.ts:29"
               },
               "threadFlows": [
                 {
                   "locations": [
                     {
                       "location": {
+                        "message": {
+                          "text": "Source: 'req.body' @ 'test.ts:27'"
+                        },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "bad-eval-with-code-flow.py"
+                            "uri": "test.ts"
                           },
                           "region": {
-                            "startLine": 3
+                            "endColumn": 29,
+                            "endLine": 27,
+                            "message": {
+                              "text": "Source: 'req.body' @ 'test.ts:27'"
+                            },
+                            "snippet": {
+                              "text": "req.body"
+                            },
+                            "startColumn": 21,
+                            "startLine": 27
                           }
-                        }
-                      },
-                      "state": {
-                        "expr": {
-                          "text": "undef"
                         }
                       },
                       "nestingLevel": 0
                     },
                     {
                       "location": {
+                        "message": {
+                          "text": "Propagator : 'protect' @ 'test.ts:27'"
+                        },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "bad-eval-with-code-flow.py"
+                            "uri": "test.ts"
                           },
                           "region": {
-                            "startLine": 4
+                            "endColumn": 18,
+                            "endLine": 27,
+                            "message": {
+                              "text": "Propagator : 'protect' @ 'test.ts:27'"
+                            },
+                            "snippet": {
+                              "text": "protect"
+                            },
+                            "startColumn": 11,
+                            "startLine": 27
                           }
-                        }
-                      },
-                      "state": {
-                        "expr": {
-                          "text": "42"
                         }
                       },
                       "nestingLevel": 0
                     },
                     {
                       "location": {
+                        "message": {
+                          "text": "Propagator : 'f' @ 'test.ts:28'"
+                        },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "bad-eval-with-code-flow.py"
+                            "uri": "test.ts"
                           },
                           "region": {
-                            "startLine": 38
+                            "endColumn": 12,
+                            "endLine": 28,
+                            "message": {
+                              "text": "Propagator : 'f' @ 'test.ts:28'"
+                            },
+                            "snippet": {
+                              "text": "f"
+                            },
+                            "startColumn": 11,
+                            "startLine": 28
                           }
                         }
                       },
-                      "state": {
-                        "raw_input": {
-                          "text": "42"
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'return eval(f)' @ 'test.ts:29'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "test.ts"
+                          },
+                          "region": {
+                            "endColumn": 19,
+                            "endLine": 29,
+                            "message": {
+                              "text": "Sink: 'return eval(f)' @ 'test.ts:29'"
+                            },
+                            "snippet": {
+                              "text": "    return eval(f)"
+                            },
+                            "startColumn": 12,
+                            "startLine": 29
+                          }
                         }
                       },
                       "nestingLevel": 1
@@ -91,9 +122,240 @@
                 }
               ]
             }
-          ]
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "44c63b4efed9f2faed8e704527752f6eb774507df3c002bd8692031caf2fe51f99500d9a3e54bf10ec01b67dcbb7f9c4426a9f56545e0c9632a409b8a72c8c47_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 19,
+                  "endLine": 29,
+                  "snippet": {
+                    "text": "    return eval(f)"
+                  },
+                  "startColumn": 12,
+                  "startLine": 29
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+          },
+          "properties": {},
+          "ruleId": "code-string-concat-copy"
+        },
+        {
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Untrusted dataflow from test.ts:34 to test.ts:36"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Source: 'req.body' @ 'test.ts:34'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "test.ts"
+                          },
+                          "region": {
+                            "endColumn": 27,
+                            "endLine": 34,
+                            "message": {
+                              "text": "Source: 'req.body' @ 'test.ts:34'"
+                            },
+                            "snippet": {
+                              "text": "req.body"
+                            },
+                            "startColumn": 19,
+                            "startLine": 34
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Propagator : 'protect' @ 'test.ts:34'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "test.ts"
+                          },
+                          "region": {
+                            "endColumn": 16,
+                            "endLine": 34,
+                            "message": {
+                              "text": "Propagator : 'protect' @ 'test.ts:34'"
+                            },
+                            "snippet": {
+                              "text": "protect"
+                            },
+                            "startColumn": 9,
+                            "startLine": 34
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Propagator : 'f' @ 'test.ts:35'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "test.ts"
+                          },
+                          "region": {
+                            "endColumn": 10,
+                            "endLine": 35,
+                            "message": {
+                              "text": "Propagator : 'f' @ 'test.ts:35'"
+                            },
+                            "snippet": {
+                              "text": "f"
+                            },
+                            "startColumn": 9,
+                            "startLine": 35
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'return eval(f)' @ 'test.ts:36'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "test.ts"
+                          },
+                          "region": {
+                            "endColumn": 17,
+                            "endLine": 36,
+                            "message": {
+                              "text": "Sink: 'return eval(f)' @ 'test.ts:36'"
+                            },
+                            "snippet": {
+                              "text": "  return eval(f)"
+                            },
+                            "startColumn": 10,
+                            "startLine": 36
+                          }
+                        }
+                      },
+                      "nestingLevel": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "44c63b4efed9f2faed8e704527752f6eb774507df3c002bd8692031caf2fe51f99500d9a3e54bf10ec01b67dcbb7f9c4426a9f56545e0c9632a409b8a72c8c47_1"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "test.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 17,
+                  "endLine": 36,
+                  "snippet": {
+                    "text": "  return eval(f)"
+                  },
+                  "startColumn": 10,
+                  "startLine": 36
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+          },
+          "properties": {},
+          "ruleId": "code-string-concat-copy"
         }
-      ]
+      ],
+      "tool": {
+        "driver": {
+          "name": "semgrep",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "help": {
+                "markdown": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.\n\n<b>References:</b>\n\n - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)\n - [https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback](https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback)\n - [https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/](https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/)\n - [https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html](https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html)",
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "id": "code-string-concat-copy",
+              "name": "code-string-concat-copy",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "MEDIUM CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding - code-string-concat-copy"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "help": {
+                "markdown": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.\n\n<b>References:</b>\n\n - [Semgrep Rule](https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat)\n - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)\n - [https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback](https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback)\n - [https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/](https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/)\n - [https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html](https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html)",
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "name": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding - javascript.lang.security.audit.code-string-concat.code-string-concat"
+              }
+            }
+          ],
+          "semanticVersion": "1.19.0"
+        }
+      }
     }
-  ]
+  ],
+  "version": "2.1.0"
 }

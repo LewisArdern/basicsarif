@@ -1,29 +1,24 @@
+name: "test analysis"
+
+# Run workflow each time code is pushed to your repository and on a schedule.
+# The scheduled workflow runs every Wednesday at 15:45 UTC.
 on:
-  pull_request: {}
   push:
-    branches:
-    - main
-    - master
-    paths:
-    - .github/workflows/semgrep.yml
   schedule:
-  # random HH:MM to avoid a load spike on GitHub Actions at 00:00
-  - cron: 2 14 * * *
-name: Semgrep
+    - cron: '45 15 * * 3'
+
 jobs:
-  semgrep:
-    name: Scan
-    runs-on: ubuntu-20.04
-    env:
-      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-      SEMGREP_APP_URL: https://semgrep.dev
-    container:
-      image: returntocorp/semgrep
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
     steps:
-    - uses: actions/checkout@v3
-    - run: semgrep --config s/returntocorp:hallo --dataflow-traces --sarif > /tmp/sarif.json
-    - run: cat /tmp/sarif.json
-    - uses: github/codeql-action/upload-sarif@v2
-      with:
-        sarif_file: /tmp/sarif.json
-        category: Semgrep
+      - uses: actions/checkout@v3
+      - uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: test.sarif
