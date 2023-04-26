@@ -149,7 +149,7 @@
             "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
           },
           "properties": {},
-          "ruleId": "[code-string-concat-copy](https://example.com)"
+          "ruleId": "code-string-concat-copy"
         },
         {
           "codeFlows": [
@@ -291,7 +291,7 @@
             "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
           },
           "properties": {},
-          "ruleId": "[code-string-concat-copy](https://example.com)"
+          "ruleId": "code-string-concat-copy"
         }
       ],
       "tool": {
@@ -317,7 +317,7 @@
                 ]
               },
               "shortDescription": {
-                "text": "Semgrep finding: code-string-concat-copy"
+                "text": "Semgrep Finding - code-string-concat-copy"
               }
             },
             {
@@ -340,7 +340,7 @@
                 ]
               },
               "shortDescription": {
-                "text": "Semgrep finding: javascript.lang.security.audit.code-string-concat.code-string-concat"
+                "text": "Semgrep Finding - javascript.lang.security.audit.code-string-concat.code-string-concat"
               }
             }
           ],
@@ -351,3 +351,4 @@
   ],
   "version": "2.1.0"
 }
+                
