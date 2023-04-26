@@ -40,7 +40,8 @@
                             "startLine": 27
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -64,7 +65,8 @@
                             "startLine": 27
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -88,7 +90,8 @@
                             "startLine": 28
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -112,7 +115,8 @@
                             "startLine": 29
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 1
                     }
                   ]
                 }
@@ -178,7 +182,8 @@
                             "startLine": 34
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -202,7 +207,8 @@
                             "startLine": 34
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -226,7 +232,8 @@
                             "startLine": 35
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 0
                     },
                     {
                       "location": {
@@ -250,7 +257,8 @@
                             "startLine": 36
                           }
                         }
-                      }
+                      },
+                      "nestingLevel": 1
                     }
                   ]
                 }
@@ -297,25 +305,8 @@
               "fullDescription": {
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
-              "id": "code-string-concat-copy",
-              "name": "code-string-concat-copy",
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-                  "OWASP-A03:2021 - Injection",
-                  "security"
-                ]
-              },
-              "shortDescription": {
-                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "fullDescription": {
+              "help": {
+                "markdown": "<b>Description</b>\nFound data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.\n<b>References:</b>\nr",
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
               "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
@@ -325,16 +316,43 @@
                 "precision": "very-high",
                 "tags": [
                   "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "HIGH CONFIDENCE",
                   "OWASP-A03:2021 - Injection",
                   "security"
                 ]
               },
               "shortDescription": {
+                "text": "Semgrep Finding - javascript.lang.security.audit.code-string-concat.code-string-concat"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "help": {
+                "markdown": "<b>Description</b>\nFound data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.\n<b>References:</b>\nr",
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "id": "code-string-concat-copy",
+              "name": "code-string-concat-copy",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "MEDIUM CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding - code-string-concat-copy"
               }
             }
           ],
-          "semanticVersion": "1.17.1"
+          "semanticVersion": "1.19.0"
         }
       }
     }
