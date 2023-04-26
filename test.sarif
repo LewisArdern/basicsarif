@@ -149,7 +149,7 @@
             "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
           },
           "properties": {},
-          "ruleId": "code-string-concat-copy"
+          "ruleId": "[code-string-concat-copy](https://example.com)"
         },
         {
           "codeFlows": [
@@ -291,13 +291,35 @@
             "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
           },
           "properties": {},
-          "ruleId": "code-string-concat-copy"
+          "ruleId": "[code-string-concat-copy](https://example.com)"
         }
       ],
       "tool": {
         "driver": {
           "name": "semgrep",
           "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
+              },
+              "id": "code-string-concat-copy",
+              "name": "code-string-concat-copy",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep finding: code-string-concat-copy"
+              }
+            },
             {
               "defaultConfiguration": {
                 "level": "error"
@@ -318,29 +340,7 @@
                 ]
               },
               "shortDescription": {
-                "text": "javascript.lang.security.audit.code-string-concat.code-string-concat"
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "fullDescription": {
-                "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
-              },
-              "id": "code-string-concat-copy",
-              "name": "code-string-concat-copy",
-              "properties": {
-                "precision": "very-high",
-                "tags": [
-                  "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-                  "HIGH CONFIDENCE",
-                  "OWASP-A03:2021 - Injection",
-                  "security"
-                ]
-              },
-              "shortDescription": {
-                "text": "code-string-concat-copy"
+                "text": "Semgrep finding: javascript.lang.security.audit.code-string-concat.code-string-concat"
               }
             }
           ],
