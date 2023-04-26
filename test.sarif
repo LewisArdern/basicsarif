@@ -305,18 +305,20 @@
               "fullDescription": {
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
-              "id": "code-string-concat-copy",
-              "name": "code-string-concat-copy",
+              "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "name": "javascript.lang.security.audit.code-string-concat.code-string-concat",
               "properties": {
                 "precision": "very-high",
                 "tags": [
                   "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "HIGH CONFIDENCE",
                   "OWASP-A03:2021 - Injection",
                   "security"
                 ]
               },
               "shortDescription": {
-                "text": "This is a test."
+                "text": "javascript.lang.security.audit.code-string-concat.code-string-concat"
               }
             },
             {
@@ -326,19 +328,19 @@
               "fullDescription": {
                 "text": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible."
               },
-              "helpUri": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
-              "id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
-              "name": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+              "id": "code-string-concat-copy",
+              "name": "code-string-concat-copy",
               "properties": {
                 "precision": "very-high",
                 "tags": [
                   "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+                  "HIGH CONFIDENCE",
                   "OWASP-A03:2021 - Injection",
                   "security"
                 ]
               },
               "shortDescription": {
-                "text": "This is a test."
+                "text": "code-string-concat-copy"
               }
             }
           ],
