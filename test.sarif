@@ -49,7 +49,7 @@
                           "text": "undef"
                         }
                       },
-                      "nestingLevel": 0
+                      "nestingLevel": 1
                     },
                     {
                       "location": {
@@ -67,7 +67,7 @@
                           "text": "42"
                         }
                       },
-                      "nestingLevel": 0
+                      "nestingLevel": 1
                     },
                     {
                       "location": {
@@ -85,7 +85,7 @@
                           "text": "42"
                         }
                       },
-                      "nestingLevel": 1
+                      "nestingLevel": 0
                     }
                   ]
                 }
