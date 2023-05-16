@@ -28,5 +28,3 @@ function isNotVulnerable(source) {
     const protect = safe_eval(source)
     return eval(protect)
 }
-
-
