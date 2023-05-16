@@ -13,7 +13,7 @@
           "codeFlows": [
             {
               "message": {
-                "text": "Untrusted dataflow from /Users/lewis/Documents/work/basicsarif/test.ts:16 to /Users/lewis/Documents/work/basicsarif/test.ts:17"
+                "text": "Untrusted dataflow from test.ts:16 to test.ts:17"
               },
               "threadFlows": [
                 {
@@ -21,17 +21,17 @@
                     {
                       "location": {
                         "message": {
-                          "text": "Source: 'req.body' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                          "text": "Source: 'req.body' @ 'test.ts:16'"
                         },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "/Users/lewis/Documents/work/basicsarif/test.ts"
+                            "uri": "test.ts"
                           },
                           "region": {
                             "endColumn": 25,
                             "endLine": 16,
                             "message": {
-                              "text": "Source: 'req.body' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                              "text": "Source: 'req.body' @ 'test.ts:16'"
                             },
                             "snippet": {
                               "text": "req.body"
@@ -46,17 +46,17 @@
                     {
                       "location": {
                         "message": {
-                          "text": "Propagator : 'value' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                          "text": "Propagator : 'value' @ 'test.ts:16'"
                         },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "/Users/lewis/Documents/work/basicsarif/test.ts"
+                            "uri": "test.ts"
                           },
                           "region": {
                             "endColumn": 14,
                             "endLine": 16,
                             "message": {
-                              "text": "Propagator : 'value' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                              "text": "Propagator : 'value' @ 'test.ts:16'"
                             },
                             "snippet": {
                               "text": "value"
@@ -71,17 +71,17 @@
                     {
                       "location": {
                         "message": {
-                          "text": "Sink: 'return eval(value)' @ '/Users/lewis/Documents/work/basicsarif/test.ts:17'"
+                          "text": "Sink: 'return eval(value)' @ 'test.ts:17'"
                         },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "/Users/lewis/Documents/work/basicsarif/test.ts"
+                            "uri": "test.ts"
                           },
                           "region": {
                             "endColumn": 21,
                             "endLine": 17,
                             "message": {
-                              "text": "Sink: 'return eval(value)' @ '/Users/lewis/Documents/work/basicsarif/test.ts:17'"
+                              "text": "Sink: 'return eval(value)' @ 'test.ts:17'"
                             },
                             "snippet": {
                               "text": "  return eval(value)"
@@ -99,13 +99,13 @@
             }
           ],
           "fingerprints": {
-            "matchBasedId/v1": "6aebb7007b48aa7cd679c0e29033a0f6e0728aa9f450f5e971fff29675fed41cb60e223871a730f909ee32cd60c58b455a7c598ca2abfd5e7215657e7f6d9cb9_0"
+            "matchBasedId/v1": "b27a61606e07855d776d57e0d5d007d69d6ca9f32eb5af6f871c836dba56a9fd29b290fca332a3efd67b169b5e53e313d9c3312236dc6b543685fd6d54baf019_0"
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "/Users/lewis/Documents/work/basicsarif/test.ts",
+                  "uri": "test.ts",
                   "uriBaseId": "%SRCROOT%"
                 },
                 "region": {
