@@ -1,88 +1,94 @@
 {
-  "version": "2.1.0",
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
   "runs": [
     {
-      "tool": {
-        "driver": {
-          "name": "PythonScanner"
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": []
         }
-      },
+      ],
       "results": [
         {
-          "ruleId": "PY2335",
-          "message": {
-            "text": "Use of tainted variable 'raw_input' in the insecure function 'eval'."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "bad-eval-with-code-flow.py"
-                },
-                "region": {
-                  "startLine": 8
-                }
-              }
-            }
-          ],
           "codeFlows": [
             {
               "message": {
-                "text": "Tracing the path from user input to insecure usage."
+                "text": "Untrusted dataflow from /Users/lewis/Documents/work/basicsarif/test.ts:16 to /Users/lewis/Documents/work/basicsarif/test.ts:17"
               },
               "threadFlows": [
                 {
                   "locations": [
                     {
                       "location": {
+                        "message": {
+                          "text": "Source: 'req.body' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                        },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "bad-eval-with-code-flow.py"
+                            "uri": "/Users/lewis/Documents/work/basicsarif/test.ts"
                           },
                           "region": {
-                            "startLine": 3
+                            "endColumn": 25,
+                            "endLine": 16,
+                            "message": {
+                              "text": "Source: 'req.body' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                            },
+                            "snippet": {
+                              "text": "req.body"
+                            },
+                            "startColumn": 17,
+                            "startLine": 16
                           }
-                        }
-                      },
-                      "state": {
-                        "expr": {
-                          "text": "undef"
                         }
                       },
                       "nestingLevel": 0
                     },
                     {
                       "location": {
+                        "message": {
+                          "text": "Propagator : 'value' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                        },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "bad-eval-with-code-flow.py"
+                            "uri": "/Users/lewis/Documents/work/basicsarif/test.ts"
                           },
                           "region": {
-                            "startLine": 4
+                            "endColumn": 14,
+                            "endLine": 16,
+                            "message": {
+                              "text": "Propagator : 'value' @ '/Users/lewis/Documents/work/basicsarif/test.ts:16'"
+                            },
+                            "snippet": {
+                              "text": "value"
+                            },
+                            "startColumn": 9,
+                            "startLine": 16
                           }
-                        }
-                      },
-                      "state": {
-                        "expr": {
-                          "text": "42"
                         }
                       },
                       "nestingLevel": 0
                     },
                     {
                       "location": {
+                        "message": {
+                          "text": "Sink: 'return eval(value)' @ '/Users/lewis/Documents/work/basicsarif/test.ts:17'"
+                        },
                         "physicalLocation": {
                           "artifactLocation": {
-                            "uri": "bad-eval-with-code-flow.py"
+                            "uri": "/Users/lewis/Documents/work/basicsarif/test.ts"
                           },
                           "region": {
-                            "startLine": 38
+                            "endColumn": 21,
+                            "endLine": 17,
+                            "message": {
+                              "text": "Sink: 'return eval(value)' @ '/Users/lewis/Documents/work/basicsarif/test.ts:17'"
+                            },
+                            "snippet": {
+                              "text": "  return eval(value)"
+                            },
+                            "startColumn": 10,
+                            "startLine": 17
                           }
-                        }
-                      },
-                      "state": {
-                        "raw_input": {
-                          "text": "42"
                         }
                       },
                       "nestingLevel": 1
@@ -91,9 +97,62 @@
                 }
               ]
             }
-          ]
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "6aebb7007b48aa7cd679c0e29033a0f6e0728aa9f450f5e971fff29675fed41cb60e223871a730f909ee32cd60c58b455a7c598ca2abfd5e7215657e7f6d9cb9_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/Users/lewis/Documents/work/basicsarif/test.ts",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 21,
+                  "endLine": 17,
+                  "snippet": {
+                    "text": "  return eval(value)"
+                  },
+                  "startColumn": 10,
+                  "startLine": 17
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Found dangerous eval usage"
+          },
+          "properties": {},
+          "ruleId": "example-for-chinmay"
         }
-      ]
+      ],
+      "tool": {
+        "driver": {
+          "name": "semgrep",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Found dangerous eval usage"
+              },
+              "id": "example-for-chinmay",
+              "name": "example-for-chinmay",
+              "properties": {
+                "precision": "very-high",
+                "tags": []
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: example-for-chinmay"
+              }
+            }
+          ],
+          "semanticVersion": "1.22.0"
+        }
+      }
     }
-  ]
+  ],
+  "version": "2.1.0"
 }
